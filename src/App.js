@@ -1,7 +1,6 @@
 import React from "react";
-import AnimeList from "./component/AnimeList";
 import AnimeLink from "./component/AnimeLink";
-import './App.css';
+import "./App.css";
 import axios from "axios";
 
 export default class App extends React.Component {
@@ -9,10 +8,47 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      list: []
+      list: [],
+      favorites: []
+      
     };
   }
+  // function for the add a new fave IN THE LIST FOR THE USEr
+  handleFaveToggle = add => {
+    // ... is for push every time without exchange every time 
+    const favorites = [...this.state.favorites];
+    const animeIndex = favorites.indexOf(add);
+    // condtion for check the array if th empty or not
+    if (animeIndex !== -1) {
+      favorites.splice(animeIndex, 1);
+      console.log(`Removing ${add.title}from fave`);
+    } else {
+      favorites.push(add);
+      console.log(`Adding ${add.title}from faves`);
+    }
+    this.setState({ favorites });
+  };
+  
+  handleRemove =remove =>{
+    const favorites = [...this.state.favorites];
+    console.log("remove");
+    const animeIndex = favorites.indexOf(remove);
+    
+      favorites.splice(animeIndex,1);
+
+    this.setState({
+      favorites
+    })
+  }
+
+  handleClear = clear =>{
+    this.setState({
+      favorites:[]
+    })
+  }
+
   // print one time before the render
+  // axios with use the components for the didMount to call before the render
   componentDidMount() {
     console.log("getAllPosts");
     axios({
@@ -28,20 +64,18 @@ export default class App extends React.Component {
         console.log("ERROR: ", err);
       });
   }
-  
+
   render() {
-    const list =this.state.list.map(i=>(
-      <div key={i.mal_id}>
-<h2>{i.title}</h2>
-      </div>
-    ))
     return (
       <div>
-        <AnimeLink />
-        
+        <AnimeLink
+          listing={this.state.list}
+          faves={this.state.favorites}
+          onFaveToggle={this.handleFaveToggle}
+          handleRemove={this.handleRemove}
+          handleClear ={this.handleClear}
+        />
         <hr />
-            <p>{list}</p>
-
       </div>
     );
   }
