@@ -1,6 +1,5 @@
 import React from "react";
 import AnimeAdd from "./AnimeUser";
-import AnimePoster from "./AnimePoster";
 
 export default class AnimeCards extends React.Component {
   render() {
