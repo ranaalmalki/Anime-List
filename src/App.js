@@ -20,9 +20,11 @@ export default class App extends React.Component {
     const favorites = [...this.state.favorites];
     const animeIndex = favorites.indexOf(add);
 
+    let favAnimeObj = add;
+    favAnimeObj.isChecked = false;
     // condtion for check the array
     if (animeIndex === -1) {
-      favorites.push(add);
+      favorites.push(favAnimeObj);
       console.log(`Adding ${add.title}from faves`);
     }
     this.setState({ favorites });
@@ -49,20 +51,18 @@ export default class App extends React.Component {
 
   handleCheckbox = (title) => {
     console.log("hi1");
-    console.log(title.mal_id);
-    const newCheckedArray =[...this.state.checked, title.mal_id]
-
-    this.setState({
-      checked:newCheckedArray
-    });
-    console.log(this.state.checked);
+    // change the status of is checked from the title object
+    title.isChecked = !title.isChecked
+    // save the changes of the title object in the favorites array
+    console.log(title);
   };
 
-  filterDelete = e => {
-    e.favorites.filter(elem => {
-      return elem.checked !== true ? "checked" : "notcheaked";
-    });
-    console.log(this.state.favorites);
+  filterDelete = () => {
+    console.log(this.state.favorites)
+    const filteredArr = this.state.favorites.filter(element => !element.isChecked)
+    this.setState({
+      favorites:filteredArr
+    })
   };
 
   // onChangeValue = event => {
