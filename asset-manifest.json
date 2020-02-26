@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Anime-List/static/css/main.ae92b67d.chunk.css",
-    "main.js": "/Anime-List/static/js/main.fb773d2d.chunk.js",
-    "main.js.map": "/Anime-List/static/js/main.fb773d2d.chunk.js.map",
+    "main.js": "/Anime-List/static/js/main.1d9e70b4.chunk.js",
+    "main.js.map": "/Anime-List/static/js/main.1d9e70b4.chunk.js.map",
     "runtime-main.js": "/Anime-List/static/js/runtime-main.35abeb88.js",
     "runtime-main.js.map": "/Anime-List/static/js/runtime-main.35abeb88.js.map",
-    "static/js/2.de75e39b.chunk.js": "/Anime-List/static/js/2.de75e39b.chunk.js",
-    "static/js/2.de75e39b.chunk.js.map": "/Anime-List/static/js/2.de75e39b.chunk.js.map",
+    "static/js/2.733aa8c0.chunk.js": "/Anime-List/static/js/2.733aa8c0.chunk.js",
+    "static/js/2.733aa8c0.chunk.js.map": "/Anime-List/static/js/2.733aa8c0.chunk.js.map",
     "index.html": "/Anime-List/index.html",
-    "precache-manifest.6d97459fb0600ee2b248c875c33f26cf.js": "/Anime-List/precache-manifest.6d97459fb0600ee2b248c875c33f26cf.js",
+    "precache-manifest.88e5fba9b5f1e6b448f6e6f8bc4a0d8e.js": "/Anime-List/precache-manifest.88e5fba9b5f1e6b448f6e6f8bc4a0d8e.js",
     "service-worker.js": "/Anime-List/service-worker.js",
     "static/css/main.ae92b67d.chunk.css.map": "/Anime-List/static/css/main.ae92b67d.chunk.css.map",
-    "static/js/2.de75e39b.chunk.js.LICENSE.txt": "/Anime-List/static/js/2.de75e39b.chunk.js.LICENSE.txt"
+    "static/js/2.733aa8c0.chunk.js.LICENSE.txt": "/Anime-List/static/js/2.733aa8c0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.35abeb88.js",
-    "static/js/2.de75e39b.chunk.js",
+    "static/js/2.733aa8c0.chunk.js",
     "static/css/main.ae92b67d.chunk.css",
-    "static/js/main.fb773d2d.chunk.js"
+    "static/js/main.1d9e70b4.chunk.js"
   ]
 }
