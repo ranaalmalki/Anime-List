@@ -1,20 +1,25 @@
 
-## Anime List 
+### Anime List App
 
-In the project directory, you can run:
+### Technologies Used:
+1. ReactJs
+2. Axios
+3. React Router
 
-### `yarn start`
+### Wireframe:
+![wireframe](Untitled Diagram.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### User Stories:
+* As a user, I should be able to click on AnimeList nav to show list of the anime
+* As a user, I should be able to click on a button to add a new anime in my page
+* As a user, I should be able to remove one anime in my page
+* As a user, I should be able to delete All  my anime list  
+* As a user, I should be able to  Add a new Anime  
+* As a user, I should be able to  Add a new comment and edit the comment  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
 
 ### `yarn build`
 
