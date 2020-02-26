@@ -17,7 +17,7 @@ export default class AnimeLink extends React.Component {
         <div>
           <Route
             path="/animelist"
-            component={() => (
+            render={() => (
               <AnimeList
                 list={this.props.listing}
                 tofaves={this.props.faves}
@@ -30,7 +30,7 @@ export default class AnimeLink extends React.Component {
 
           <Route
             path="/animeuser"
-            component={() => (
+            render={() => (
               <AnimeUser
                 list={this.props.listing}
                 tofaves={this.props.faves}

@@ -10,7 +10,7 @@ export default class App extends React.Component {
     this.state = {
       list: [],
       favorites: [],
-      title: ""
+      checked:[]
     };
   }
 
@@ -29,39 +29,42 @@ export default class App extends React.Component {
   };
 
   handleRemove = remove => {
-
+    console.log(remove)
     const favorites = [...this.state.favorites];
     const animeIndex = favorites[remove];
 
     favorites.splice(animeIndex, 1);
 
     this.setState({
-      favorites:favorites
+      favorites: favorites
     });
   };
 
   handleClear = clear => {
     // console.log(this.state.checked);
-    
     this.setState({
       favorites: []
     });
   };
 
+  handleCheckbox = (title) => {
+    console.log("hi1");
+    console.log(title.mal_id);
+    const newCheckedArray =[...this.state.checked, title.mal_id]
+
+    this.setState({
+      checked:newCheckedArray
+    });
+    console.log(this.state.checked);
+  };
+
   filterDelete = e => {
-
+    e.favorites.filter(elem => {
+      return elem.checked !== true ? "checked" : "notcheaked";
+    });
     console.log(this.state.favorites);
-  
-    }
+  };
 
-
-  // handleCheckbox = event => {
-  //   console.log("hi1");
-  //   this.setState({
-  //     checked: !this.state.checked
-  //   });
-  //   console.log(this.state.checked);
-  // };
   // onChangeValue = event => {
   //   this.setState({
   //     title: event.target.value
@@ -77,7 +80,7 @@ export default class App extends React.Component {
   //       title:"",
   //     }
   //   });
-   
+
   // };
 
   // print one time before the render
@@ -107,10 +110,10 @@ export default class App extends React.Component {
           onFaveToggle={this.handleFaveToggle}
           handleRemove={this.handleRemove}
           handleClear={this.handleClear}
-          checkedbox={this.state.checked}
+          handleCheckbox={this.handleCheckbox}
           addNewItem={this.addNewItem}
           onChangeValue={this.onChangeValue}
-          filterDelete ={this.filterDelete} 
+          filterDelete={this.filterDelete}
         />
         <hr />
       </div>
