@@ -19,30 +19,30 @@
   justify-content: center;
 width:50px 50px;  
 } */
-.grid-container {
-  /* display: grid; */
-  /* grid-template-columns: auto auto auto auto; */
-  /* grid-gap: 10px; */
-  /* background-color: rgb(127, 251, 255); */
+/* .grid-container {
+   display: grid; 
+  grid-template-columns: auto auto auto auto; 
+ grid-gap: 10px; 
+   background-color: rgb(127, 251, 255); 
   
+} */
+body{
+  text-align: center;
+  background-image: url(https://wallpapermemory.com/uploads/791/sword-art-online-2-ii-wallpaper-hd-2560x1440-112804.jpg);
+/* background-position: left; */
+  /* background-size: 30%; */
 }
-
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  
+  background-color: rgba(0, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 
-.film-row-fave {
-  border: black solid 5px;
-  padding: 50px;
-  
-}
-.App{
-  display: inline;
-}
+
+
 
 nav {
   list-style-type: none;
@@ -64,12 +64,17 @@ nav a:hover:not(.active) {
 }
 
 .anime{
-  float: left;
-  background-color: rgb(127, 251, 255);
   padding: 10px;
   width: 230px;
   margin: 40px;
+  display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 100px;
+	padding: 100px 200px;
+  justify-content: center;
+  margin-left: 630px;
+  margin-top: 0;
 }
-.div{
-  background-color: aquamarine;
+.anime button{
 }
+

@@ -8,7 +8,8 @@ export default class AnimeCards extends React.Component {
       <div className="grid-container">
         <div className="cards">
           <h2>{this.props.title}</h2>
-          <img src={this.props.img} />
+          <img src={this.props.img}/>
+         
         </div>
       </div>
     );

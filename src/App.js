@@ -10,7 +10,6 @@ export default class App extends React.Component {
     this.state = {
       list: [],
       favorites: [],
-      checked: false,
       title: ""
     };
   }
@@ -30,46 +29,56 @@ export default class App extends React.Component {
   };
 
   handleRemove = remove => {
-    console.log("remove");
 
     const favorites = [...this.state.favorites];
-    const animeIndex = favorites.indexOf(remove);
+    const animeIndex = favorites[remove];
 
     favorites.splice(animeIndex, 1);
 
     this.setState({
-      favorites
+      favorites:favorites
     });
   };
 
   handleClear = clear => {
+    // console.log(this.state.checked);
+    
     this.setState({
       favorites: []
     });
   };
 
-  handleCheckbox = event => {
-    this.setState({
-      checked: !this.state.isChecked
-    });
-  };
-  onChangeValue = event => {
-    this.setState({
-      title: event.target.value
-    });
-  };
-  addNewItem = item => {
-    this.setState(state =>{
-      const list = state.list.push(state.title);
-      console.log("click"+list)
+  filterDelete = e => {
 
-      return{
-        list,
-        title:"",
-      }
-    });
+    console.log(this.state.favorites);
+  
+    }
+
+
+  // handleCheckbox = event => {
+  //   console.log("hi1");
+  //   this.setState({
+  //     checked: !this.state.checked
+  //   });
+  //   console.log(this.state.checked);
+  // };
+  // onChangeValue = event => {
+  //   this.setState({
+  //     title: event.target.value
+  //   });
+  // };
+  // addNewItem = item => {
+  //   this.setState(state =>{
+  //     const list = state.list.push(state.title);
+  //     console.log("click"+list)
+
+  //     return{
+  //       list,
+  //       title:"",
+  //     }
+  //   });
    
-  };
+  // };
 
   // print one time before the render
   // axios with use the components for the didMount to call before the render
@@ -98,9 +107,10 @@ export default class App extends React.Component {
           onFaveToggle={this.handleFaveToggle}
           handleRemove={this.handleRemove}
           handleClear={this.handleClear}
-          handleCheckbox={this.handleCheckbox}
+          checkedbox={this.state.checked}
           addNewItem={this.addNewItem}
           onChangeValue={this.onChangeValue}
+          filterDelete ={this.filterDelete} 
         />
         <hr />
       </div>

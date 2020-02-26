@@ -9,7 +9,7 @@ export default class Animelist extends React.Component {
     // let showAnime=[];
     console.log("10 anime list:", this.props.list);
     const list = this.props.list.map(item => (
-      <div class="anime">
+      <div>
         <AnimeCards
           key={item.mal_id}
           title={item.title}
@@ -25,13 +25,13 @@ export default class Animelist extends React.Component {
     ));
 
     return (
-      <div>
+      <div className="animeheader">
         <h1>Anime List</h1>
         <AddNewAnime
           addNewItem={() => this.props.addNewItem()}
           onChangeValue={() => this.props.onChangeValue()}
         />
-        <p>{list}</p>
+        <div className="anime">{list}</div>
       </div>
     );
   }

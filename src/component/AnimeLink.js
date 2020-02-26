@@ -38,6 +38,8 @@ export default class AnimeLink extends React.Component {
                 handleRemove={this.props.handleRemove}
                 handleClear={this.props.handleClear}
                 handleCheckbox={this.props.handleCheckbox}
+                filterDelete ={this.props.filterDelete} 
+
                
               />
             )}
