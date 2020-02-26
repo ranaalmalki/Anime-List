@@ -9,43 +9,67 @@ export default class App extends React.Component {
 
     this.state = {
       list: [],
-      favorites: []
-      
+      favorites: [],
+      checked: false,
+      title: ""
     };
   }
+
   // function for the add a new fave IN THE LIST FOR THE USEr
   handleFaveToggle = add => {
-    // ... is for push every time without exchange every time 
+    // ... is for push every time without exchange every time
     const favorites = [...this.state.favorites];
     const animeIndex = favorites.indexOf(add);
-    // condtion for check the array if th empty or not
-    if (animeIndex !== -1) {
-      favorites.splice(animeIndex, 1);
-      console.log(`Removing ${add.title}from fave`);
-    } else {
+
+    // condtion for check the array
+    if (animeIndex === -1) {
       favorites.push(add);
       console.log(`Adding ${add.title}from faves`);
     }
     this.setState({ favorites });
   };
-  
-  handleRemove =remove =>{
-    const favorites = [...this.state.favorites];
+
+  handleRemove = remove => {
     console.log("remove");
+
+    const favorites = [...this.state.favorites];
     const animeIndex = favorites.indexOf(remove);
-    
-      favorites.splice(animeIndex,1);
+
+    favorites.splice(animeIndex, 1);
 
     this.setState({
       favorites
-    })
-  }
+    });
+  };
 
-  handleClear = clear =>{
+  handleClear = clear => {
     this.setState({
-      favorites:[]
-    })
-  }
+      favorites: []
+    });
+  };
+
+  handleCheckbox = event => {
+    this.setState({
+      checked: !this.state.isChecked
+    });
+  };
+  onChangeValue = event => {
+    this.setState({
+      title: event.target.value
+    });
+  };
+  addNewItem = item => {
+    this.setState(state =>{
+      const list = state.list.push(state.title);
+      console.log("click"+list)
+
+      return{
+        list,
+        title:"",
+      }
+    });
+   
+  };
 
   // print one time before the render
   // axios with use the components for the didMount to call before the render
@@ -73,7 +97,10 @@ export default class App extends React.Component {
           faves={this.state.favorites}
           onFaveToggle={this.handleFaveToggle}
           handleRemove={this.handleRemove}
-          handleClear ={this.handleClear}
+          handleClear={this.handleClear}
+          handleCheckbox={this.handleCheckbox}
+          addNewItem={this.addNewItem}
+          onChangeValue={this.onChangeValue}
         />
         <hr />
       </div>

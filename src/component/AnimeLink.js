@@ -7,11 +7,11 @@ export default class AnimeLink extends React.Component {
     return (
       <Router>
         <nav>
-        <Link to="/">Home</Link>
-        <Link className={"animeButton"} to="/animelist">
-          Anime List
-        </Link>
-        <Link to="/animeuser">Anime User</Link>
+          <Link to="/">Home</Link>
+          <Link className={"animeButton"} to="/animelist">
+            Anime List
+          </Link>
+          <Link to="/animeuser">Anime User</Link>
         </nav>
 
         <div>
@@ -22,6 +22,8 @@ export default class AnimeLink extends React.Component {
                 list={this.props.listing}
                 tofaves={this.props.faves}
                 onFaveToggle1={this.props.onFaveToggle}
+                addNewItem={this.props.addNewItem}
+                onChangeValue={this.props.onChangeValue}
               />
             )}
           />
@@ -30,11 +32,13 @@ export default class AnimeLink extends React.Component {
             path="/animeuser"
             component={() => (
               <AnimeUser
-              list = {this.props.listing}
+                list={this.props.listing}
                 tofaves={this.props.faves}
                 onFaveToggle1={this.props.onFaveToggle}
-                handleRemove = {this.props.handleRemove}
-                handleClear ={this.props.handleClear}
+                handleRemove={this.props.handleRemove}
+                handleClear={this.props.handleClear}
+                handleCheckbox={this.props.handleCheckbox}
+               
               />
             )}
           />

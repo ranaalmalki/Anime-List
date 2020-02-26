@@ -10,7 +10,7 @@ export default class AnimeCards extends React.Component {
           <h2>{this.props.title}</h2>
           <img src={this.props.img} />
         </div>
-        </div>
+      </div>
     );
   }
 }

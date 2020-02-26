@@ -9,7 +9,7 @@ export default class Add extends React.Component {
     return (
 
       <div>
-          <button onClick={this.Add}>Add</button>
+          <button onClick={this.Add}>Add to my page</button>
       </div>
     );
   }

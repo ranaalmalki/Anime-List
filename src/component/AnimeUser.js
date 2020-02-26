@@ -2,7 +2,9 @@ import React from "react";
 import AnimeCards from "./AnimeCards";
 import Remove from "./Remove";
 import Clear from "./Clear";
-export default class AnimeAdd extends React.Component {
+import Checkbox from "./Checkbox";
+import Edit from "./Edit";
+export default class AnimeUser extends React.Component {
   render() {
     const userList = this.props.tofaves.map(item => (
       <div>
@@ -14,13 +16,22 @@ export default class AnimeAdd extends React.Component {
           onFaveToggle={() => this.props.onFaveToggle1(item)}
           handleRemove={() => this.props.handleRemove(item)}
           handleClear={() => this.props.handleClear(item)}
+          handleCheckbox={() => this.props.handleCheckbox(item)}
+          addNewItem={() => this.props.addNewItem(item)}
+          onChangeValue={() => this.props.onChangeValue(item)}
         />
         <Remove handleRemove={() => this.props.handleRemove(item)} />
-        <Clear handleClear={() => this.props.handleClear(item)} />
+        <Edit addNewItem={() => this.props.addNewItem(item)} />
+        <Checkbox handleCheckbox={() => this.props.handleCheckbox(item)} />
+       
       </div>
     ));
 
-
-    return <div className={`film-row-fave`}>{userList}</div>;
+    return (
+      <div className="">
+        <Clear handleClear={() => this.props.handleClear()} />
+        {userList}
+      </div>
+    );
   }
 }

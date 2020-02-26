@@ -14,3 +14,4 @@ export default class Remove extends React.Component {
     );
   }
 }
+

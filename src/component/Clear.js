@@ -10,6 +10,7 @@ export default class Add extends React.Component {
 
       <div>
           <button onClick={this.Clear}>Clear</button>
+         
       </div>
     );
   }
