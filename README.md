@@ -1,6 +1,7 @@
 
-## Anime List App <hr/>
-
+## Anime List App 
+https://ranaalmalki.github.io/Anime-List/
+</hr>
 ### Technologies Used:
 
 1. ReactJs
@@ -21,3 +22,5 @@
 ### Development process :
 At fisrt , i searched for Anime Api and is just take me 2 min to find Jikan Api then i create a new react app to start my code .
 
+### Jikan Api:
+https://jikan.docs.apiary.io/#introduction/information/wrappers
