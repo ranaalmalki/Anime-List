@@ -2,6 +2,7 @@
 ## Anime List App 
 https://ranaalmalki.github.io/Anime-List/
 </hr>
+
 ### Technologies Used:
 
 1. ReactJs
