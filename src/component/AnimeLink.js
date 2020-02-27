@@ -8,9 +8,7 @@ export default class AnimeLink extends React.Component {
       <Router>
         <nav>
           <Link to="/">Home</Link>
-          <Link className={"animeButton"} to="/animelist">
-            Anime List
-          </Link>
+          <Link to="/animelist">Anime List</Link>
           <Link to="/animeuser">Anime User</Link>
         </nav>
 
@@ -38,9 +36,7 @@ export default class AnimeLink extends React.Component {
                 handleRemove={this.props.handleRemove}
                 handleClear={this.props.handleClear}
                 handleCheckbox={this.props.handleCheckbox}
-                filterDelete ={this.props.filterDelete} 
-
-               
+                filterDelete={this.props.filterDelete}
               />
             )}
           />

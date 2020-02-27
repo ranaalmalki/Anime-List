@@ -1,7 +1,6 @@
 import React from "react";
 export default class AddNewAnime extends React.Component {
   render() {
-      
     return (
       <div>
         <input
@@ -20,6 +19,3 @@ export default class AddNewAnime extends React.Component {
     );
   }
 }
-
-//form for edit the title or the image for the anime
-//then i can do the add form

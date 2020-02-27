@@ -8,7 +8,7 @@ export default class Add extends React.Component {
   render() {
     return (
 
-      <div>
+      <div className="buttonAdd">
           <button onClick={this.Add}>Add to my page</button>
       </div>
     );

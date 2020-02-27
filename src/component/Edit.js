@@ -1,11 +1,10 @@
 // import React from "react";
 // export default class Edit extends React.Component {
-   
-  
+
 //     Edit = e => {
 //         e.stopPropagation();
 //         console.log('On Text Change', );
-        
+
 //       };
 //   render() {
 //     return (

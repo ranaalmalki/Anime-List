@@ -9,29 +9,30 @@ export default class App extends React.Component {
 
     this.state = {
       list: [],
-      favorites: [],
-      checked:[]
+      favorites: []
     };
   }
 
-  // function for the add a new fave IN THE LIST FOR THE USEr
+  // function for  add a new anime in the user list
   handleFaveToggle = add => {
-    // ... is for push every time without exchange every time
+    // ... is for push every time without replace the item
     const favorites = [...this.state.favorites];
     const animeIndex = favorites.indexOf(add);
 
     let favAnimeObj = add;
     favAnimeObj.isChecked = false;
-    // condtion for check the array
+    // applay the user click one time
     if (animeIndex === -1) {
       favorites.push(favAnimeObj);
       console.log(`Adding ${add.title}from faves`);
     }
+    //to allow add new item in the array favorites
     this.setState({ favorites });
   };
 
+  //function for remove one item in user page
   handleRemove = remove => {
-    console.log(remove)
+    console.log(remove);
     const favorites = [...this.state.favorites];
     const animeIndex = favorites[remove];
 
@@ -42,46 +43,31 @@ export default class App extends React.Component {
     });
   };
 
+  //clear all the item in the favorites array by one click :)
   handleClear = clear => {
-    // console.log(this.state.checked);
     this.setState({
       favorites: []
     });
   };
 
-  handleCheckbox = (title) => {
-    console.log("hi1");
+  // to check if the user click the checkbox will return true
+  handleCheckbox = title => {
     // change the status of is checked from the title object
-    title.isChecked = !title.isChecked
+    title.isChecked = !title.isChecked;
     // save the changes of the title object in the favorites array
     console.log(title);
   };
 
+  //when click the button delete will check if true will remove the item
   filterDelete = () => {
-    console.log(this.state.favorites)
-    const filteredArr = this.state.favorites.filter(element => !element.isChecked)
+    console.log(this.state.favorites);
+    const filteredArr = this.state.favorites.filter(
+      element => !element.isChecked
+    );
     this.setState({
-      favorites:filteredArr
-    })
+      favorites: filteredArr
+    });
   };
-
-  // onChangeValue = event => {
-  //   this.setState({
-  //     title: event.target.value
-  //   });
-  // };
-  // addNewItem = item => {
-  //   this.setState(state =>{
-  //     const list = state.list.push(state.title);
-  //     console.log("click"+list)
-
-  //     return{
-  //       list,
-  //       title:"",
-  //     }
-  //   });
-
-  // };
 
   // print one time before the render
   // axios with use the components for the didMount to call before the render
